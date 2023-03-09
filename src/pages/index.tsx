@@ -1,12 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-
-import { api } from "~/utils/api";
+import TodoHeader from "~/components/TodoHeader";
+import TodoList from "~/components/TodoList";
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
-
   return (
     <>
       <Head>
@@ -20,6 +17,7 @@ const Home: NextPage = () => {
             Do These Things
           </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+            <TodoHeader />
             <TodoList />
           </div>
         </div>
